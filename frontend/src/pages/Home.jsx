@@ -96,7 +96,7 @@ const Home = () => {
             fontFamily: 'var(--font-display)',
             fontSize: 'clamp(2.75rem, 7vw, 5.25rem)',
             fontWeight: 900,
-            letterSpacing: '-0.04em',
+            letterSpacing: '-0.02em',
             lineHeight: 1.05,
             color: 'var(--text-1)',
             marginBottom: '1.5rem',

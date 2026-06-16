@@ -1,16 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import JobBoard from './pages/JobBoard';
-import PostJob from './pages/PostJob';
-import ApplicationTracker from './pages/ApplicationTracker';
-import ApplicantReview from './pages/ApplicantReview';
-import Interviews from './pages/Interviews';
+import Navbar from './components/Navbar/Navbar';
+import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import Dashboard from './pages/Dashboard/Dashboard';
+import JobBoard from './pages/JobBoard/JobBoard';
+import PostJob from './pages/PostJob/PostJob';
+import ApplicationTracker from './pages/ApplicationTracker/ApplicationTracker';
+import ApplicantReview from './pages/ApplicantReview/ApplicantReview';
+import Interviews from './pages/Interviews/Interviews';
 
 function App() {
   return (

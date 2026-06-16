@@ -1,0 +1,270 @@
+/* ============================================================
+   DASHBOARD PAGE STYLES
+   ============================================================ */
+
+/* ── Header ── */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.dashboard-welcome-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  margin-bottom: 0.375rem;
+}
+
+.dashboard-welcome-sub {
+  color: var(--text-2);
+  font-size: 0.9375rem;
+}
+
+/* ── Stats grid ── */
+.dash-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .dash-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ── Panels grid ── */
+.dash-panels-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .dash-panels-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Panel heading ── */
+.panel-heading {
+  font-family: var(--font-display);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+  font-size: 1rem;
+}
+
+/* ── Resume upload ── */
+.resume-status-ok {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background: var(--success-subtle);
+  border: 1px solid var(--success-border);
+  margin-bottom: 1.25rem;
+}
+
+.resume-status-filename {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--success-light);
+}
+
+.resume-status-meta {
+  font-size: 0.75rem;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+
+.upload-zone {
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 1rem;
+  border: 2px dashed var(--border-medium);
+  background: transparent;
+}
+
+.upload-zone:hover,
+.upload-zone.dragging {
+  border-color: var(--primary-light);
+  background: var(--primary-subtle);
+}
+
+.upload-zone.has-file {
+  border-color: var(--success);
+  background: var(--success-subtle);
+}
+
+.upload-icon {
+  margin-bottom: 0.75rem;
+}
+
+.upload-filename {
+  font-weight: 600;
+  color: var(--success-light);
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.upload-filemeta {
+  font-size: 0.75rem;
+  color: var(--text-3);
+}
+
+.upload-hint-title {
+  font-weight: 600;
+  color: var(--text-2);
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.upload-hint-sub {
+  font-size: 0.75rem;
+  color: var(--text-3);
+}
+
+/* ── Quick action links ── */
+.quick-actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quick-action-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-2);
+  text-decoration: none;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.quick-action-link:hover {
+  border-color: rgba(124, 58, 237, 0.35);
+  background: var(--primary-subtle);
+  color: var(--text-1);
+}
+
+.quick-action-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ── Recruiter job list ── */
+.job-list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  gap: 1rem;
+}
+
+.job-list-info {
+  min-width: 0;
+}
+
+.job-list-title {
+  font-weight: 600;
+  color: var(--text-1);
+  font-size: 0.9375rem;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.job-list-meta {
+  font-size: 0.75rem;
+  color: var(--text-3);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ── Getting started tips ── */
+.tips-section-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-3);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.tip-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 0.75rem;
+  align-items: flex-start;
+}
+
+.tip-num {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--primary-subtle);
+  color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  margin-top: 1px;
+}
+
+.tip-text {
+  font-size: 0.875rem;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+/* ── Panel empty state ── */
+.panel-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.panel-empty-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-3);
+}
+
+.panel-empty-text {
+  font-size: 0.875rem;
+  color: var(--text-3);
+}

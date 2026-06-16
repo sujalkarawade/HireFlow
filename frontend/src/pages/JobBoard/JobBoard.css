@@ -1,0 +1,164 @@
+/* ============================================================
+   JOB BOARD PAGE STYLES
+   ============================================================ */
+
+/* ── Header ── */
+.jobboard-header {
+  margin-bottom: 2.5rem;
+}
+
+.jobboard-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  margin-bottom: 0.5rem;
+}
+
+.jobboard-count {
+  color: var(--text-2);
+}
+
+/* ── Search bar ── */
+.jobboard-search-wrap {
+  position: relative;
+  margin-bottom: 1rem;
+  max-width: 540px;
+}
+
+.jobboard-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-3);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.jobboard-search-input {
+  width: 100%;
+  padding: 0.6875rem 1rem 0.6875rem 2.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-input);
+  color: var(--text-1);
+  font-size: 0.9375rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.jobboard-search-input::placeholder {
+  color: var(--text-4);
+}
+
+.jobboard-search-input:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+/* ── Filter pills ── */
+.filter-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.filter-pills-label {
+  font-size: 0.75rem;
+  color: var(--text-3);
+  margin-right: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.filter-pill {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid var(--border-medium);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-2);
+}
+
+.filter-pill.active {
+  border-color: var(--primary-light);
+  background: var(--primary-subtle);
+  color: #c4b5fd;
+}
+
+.filter-pill:hover:not(.active) {
+  color: var(--text-1);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ── Jobs grid ── */
+.jobs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .jobs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── Job card ── */
+.job-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+.job-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.job-card-title {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.job-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-3);
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.job-card-desc {
+  color: var(--text-2);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.job-card-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1.25rem;
+}

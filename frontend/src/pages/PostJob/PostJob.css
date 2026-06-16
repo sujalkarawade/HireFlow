@@ -1,0 +1,173 @@
+/* ============================================================
+   POST JOB PAGE STYLES
+   ============================================================ */
+
+/* ── Header ── */
+.postjob-header {
+  margin-bottom: 2.5rem;
+}
+
+.postjob-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  margin-bottom: 0.5rem;
+}
+
+.postjob-sub {
+  color: var(--text-2);
+}
+
+/* ── Two-column layout ── */
+.postjob-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 860px) {
+  .postjob-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Preview panel ── */
+.postjob-preview-panel {
+  align-self: flex-start;
+  position: sticky;
+  top: 90px;
+}
+
+.preview-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.25rem;
+  color: var(--text-3);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.preview-card {
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+.preview-title {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text-1);
+}
+
+.preview-title-empty {
+  color: var(--text-4);
+}
+
+.preview-meta {
+  font-size: 0.75rem;
+  color: var(--text-3);
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.preview-desc {
+  font-size: 0.875rem;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.preview-desc-empty {
+  color: var(--text-4);
+  font-style: italic;
+}
+
+.preview-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.preview-skills-empty {
+  font-size: 0.8rem;
+  color: var(--text-4);
+  font-style: italic;
+}
+
+/* ── Skill tag input ── */
+.skill-tags-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+/* ── Form label with icon ── */
+.form-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-2);
+  margin-bottom: 0.5rem;
+}
+
+.form-label-icon-text {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.char-count {
+  font-size: 0.75rem;
+  transition: color 0.2s;
+}
+
+/* ── Success screen ── */
+.postjob-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 65px);
+}
+
+.postjob-success-inner {
+  text-align: center;
+}
+
+.success-icon-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--success-subtle);
+  border: 2px solid var(--success-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.success-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.success-sub {
+  color: var(--text-2);
+}
