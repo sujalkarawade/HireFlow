@@ -45,9 +45,17 @@ class ResumeResponse(BaseModel):
     id: int
     candidate_id: int
     file_path: str
+    extracted_text: Optional[str] = None
     
     class Config:
         from_attributes = True
+
+class ResumeSummary(BaseModel):
+    summary_text: str
+    experience_summary: str
+    education_summary: str
+    skills_highlight: str
+    key_strengths: str
 
 class InterviewBase(BaseModel):
     scheduled_at: datetime.datetime

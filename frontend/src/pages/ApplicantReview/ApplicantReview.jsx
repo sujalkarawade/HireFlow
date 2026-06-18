@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import api from '../../api';
 import {
   Users, Mail, TrendingUp, Calendar,
-  ChevronDown, ChevronUp, ArrowLeft, CheckCircle, XCircle, Eye
+  ChevronDown, ChevronUp, ArrowLeft, CheckCircle, XCircle, Eye, FileText
 } from 'lucide-react';
+import ResumeDrawer from '../../components/ResumeDrawer';
 import './ApplicantReview.css';
 
 /* ── Score bar ── */
@@ -37,7 +38,7 @@ const STATUS_MAP = {
 };
 
 /* ── Applicant Card ── */
-const ApplicantCard = ({ app, onUpdateStatus, onSchedule }) => {
+const ApplicantCard = ({ app, onUpdateStatus, onSchedule, onReviewResume }) => {
   const [expanded,   setExpanded]   = useState(false);
   const [date,       setDate]       = useState('');
   const [link,       setLink]       = useState('');
@@ -84,6 +85,15 @@ const ApplicantCard = ({ app, onUpdateStatus, onSchedule }) => {
           {skills.map(s => <span key={s} className="skill-tag">{s}</span>)}
         </div>
       )}
+
+      {/* Review Resume Button */}
+      <button
+        onClick={() => onReviewResume(app)}
+        className="btn btn-sm btn-outline"
+        style={{ width: '100%', marginBottom: '0.5rem' }}
+      >
+        <FileText size={13} /> Review Resume
+      </button>
 
       {/* Actions */}
       <div className="applicant-actions">
@@ -183,6 +193,8 @@ const ApplicantReview = () => {
   const [applications, setApplications] = useState([]);
   const [job,          setJob]          = useState(null);
   const [loading,      setLoading]      = useState(true);
+  const [drawerApp,    setDrawerApp]    = useState(null);
+  const [drawerOpen,   setDrawerOpen]   = useState(false);
 
   useEffect(() => {
     Promise.all([
@@ -205,6 +217,16 @@ const ApplicantReview = () => {
       alert('Failed to update status');
     }
   };
+
+  const handleReviewResume = useCallback((app) => {
+    setDrawerApp(app);
+    setDrawerOpen(true);
+  }, []);
+
+  const handleCloseDrawer = useCallback(() => {
+    setDrawerOpen(false);
+    setDrawerApp(null);
+  }, []);
 
   const scheduleInterview = async (appId, date, link) => {
     try {
@@ -281,11 +303,22 @@ const ApplicantReview = () => {
                 app={app}
                 onUpdateStatus={updateStatus}
                 onSchedule={scheduleInterview}
+                onReviewResume={handleReviewResume}
               />
             ))}
           </div>
         )}
       </div>
+
+      {/* ── Resume Drawer ── */}
+      {drawerOpen && drawerApp && (
+        <ResumeDrawer
+          candidateId={drawerApp.candidate_id}
+          candidateName={drawerApp.candidate?.full_name}
+          jobRequiredSkills={job?.required_skills}
+          onClose={handleCloseDrawer}
+        />
+      )}
     </div>
   );
 };
