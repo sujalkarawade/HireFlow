@@ -9,7 +9,7 @@ from sqlalchemy.orm import Session
 from database import get_db
 import models, schemas
 
-SECRET_KEY = "supersecretkey" # In production, use an environment variable
+SECRET_KEY = os.getenv("JWT_SECRET", "supersecretkey") # In production, use an environment variable
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 # 1 day for convenience
 
